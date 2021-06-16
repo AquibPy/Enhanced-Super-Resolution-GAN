@@ -48,3 +48,10 @@ test_transform = A.Compose(
         ToTensorV2()
     ]
 )
+custom_transform = A.Compose(
+    [
+        A.Resize(512,512),
+        A.Normalize(mean=[0,0,0],std=[1,1,1]),
+        ToTensorV2()
+    ]
+)
