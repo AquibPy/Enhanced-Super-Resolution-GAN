@@ -16,7 +16,7 @@ load_checkpoint(config.CHECKPOINT_GEN,gen,opt_gen,config.LEARNING_RATE)
 def generate_image(image_path:str):
     input_image = np.array(Image.open(image_path))
     H,W,C = input_image.shape
-    if H or W >512:
+    if (H or W) >=512:
         img = config.custom_transform(image=input_image)['image']
     else:
         img = config.test_transform(image=input_image)['image']
